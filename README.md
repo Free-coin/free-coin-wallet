@@ -1,44 +1,44 @@
-# Mist Browser
+# Free Coin Wallet ( Beta )
 
-[![Join the chat at https://gitter.im/ethereum/mist](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ethereum/mist?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status develop branch](https://travis-ci.org/ethereum/mist.svg?branch=develop)](https://travis-ci.org/ethereum/mist)
-[![Code Climate](https://codeclimate.com/github/ethereum/mist/badges/gpa.svg)](https://codeclimate.com/github/ethereum/mist)
+[![Join the chat at https://gitter.im/ethereum/Free Coin Wallet](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ethereum/Free Coin Wallet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status develop branch](https://travis-ci.org/ethereum/Free Coin Wallet.svg?branch=develop)](https://travis-ci.org/ethereum/Free Coin Wallet)
+[![Code Climate](https://codeclimate.com/github/ethereum/Free Coin Wallet/badges/gpa.svg)](https://codeclimate.com/github/ethereum/Free Coin Wallet)
 
-The Mist browser is the tool of choice to browse and use Ðapps.
+The Free Coin Wallet browser is the tool of choice to browse and use Ðapps.
 
-For the Mist API see the [MISTAPI.md](MISTAPI.md).
+For the Free Coin Wallet API see the [Free Coin WalletAPI.md](Free Coin WalletAPI.md).
 
 Please note that this repository is the Electron host for the Meteor based wallet dapp whose repository is located here: https://github.com/ethereum/meteor-dapp-wallet.
 
 ## Help and troubleshooting
 
-Please check the [Mist troubleshooting guide](https://github.com/ethereum/mist/wiki).
+Please check the [Free Coin Wallet troubleshooting guide](https://github.com/ethereum/Free Coin Wallet/wiki).
 
-Or the [Gitter Channel](https://gitter.im/ethereum/mist), to connect with the community for instant help.
+Or the [Gitter Channel](https://gitter.im/ethereum/Free Coin Wallet), to connect with the community for instant help.
 
 ## Installation
 
-If you want to install the app from a pre-built version on the [release page](https://github.com/ethereum/mist/releases),
+If you want to install the app from a pre-built version on the [release page](https://github.com/ethereum/Free Coin Wallet/releases),
 you can simply run the executeable after download.
 
 For updating simply download the new version and copy it over the old one (keep a backup of the old one if you want to be sure).
 
 #### Config folder
-The data folder for Mist is stored in other places:
+The data folder for Free Coin Wallet is stored in other places:
 
-- Windows `%APPDATA%\Mist`
-- macOS `~/Library/Application\ Support/Mist`
-- Linux `~/.config/Mist`
+- Windows `%APPDATA%\Free Coin Wallet`
+- macOS `~/Library/Application\ Support/Free Coin Wallet`
+- Linux `~/.config/Free Coin Wallet`
 
 
 ## Development
 
 For development, a Meteor server will need to be started to assist with live reload and CSS injection.
-Once a Mist version is released the Meteor frontend part is bundled using the `meteor-build-client` npm package to create pure static files.
+Once a Free Coin Wallet version is released the Meteor frontend part is bundled using the `meteor-build-client` npm package to create pure static files.
 
 ### Dependencies
 
-To run mist in development you need:
+To run Free Coin Wallet in development you need:
 
 - [Node.js](https://nodejs.org) `v7.x` (use the prefered installation method for your OS)
 - [Meteor](https://www.meteor.com/install) javascript app framework
@@ -55,31 +55,31 @@ Install the latter ones via:
 
 ### Initialisation
 
-Now you're ready to initialise Mist for development:
+Now you're ready to initialise Free Coin Wallet for development:
 
-    $ git clone https://github.com/ethereum/mist.git
-    $ cd mist
+    $ git clone https://github.com/ethereum/Free Coin Wallet.git
+    $ cd Free Coin Wallet
     $ yarn
 
-To update Mist in the future, run:
+To update Free Coin Wallet in the future, run:
 
-    $ cd mist
+    $ cd Free Coin Wallet
     $ git pull
     $ yarn
 
-### Run Mist
+### Run Free Coin Wallet
 
 For development we start the interface with a Meteor server for autoreload etc.
 *Start the interface in a separate terminal window:*
 
-    $ cd mist/interface && meteor --no-release-check
+    $ cd Free Coin Wallet/interface && meteor --no-release-check
 
-In the original window you can then start Mist with:
+In the original window you can then start Free Coin Wallet with:
 
-    $ cd mist
+    $ cd Free Coin Wallet
     $ yarn dev:electron
 
-*NOTE: client-binaries (e.g. [geth](https://github.com/ethereum/go-ethereum)) specified in [clientBinaries.json](https://github.com/ethereum/mist/blob/master/clientBinaries.json) will be checked during every startup and downloaded if out-of-date, binaries are stored in the [config folder](#config-folder)*
+*NOTE: client-binaries (e.g. [geth](https://github.com/ethereum/go-ethereum)) specified in [clientBinaries.json](https://github.com/ethereum/Free Coin Wallet/blob/master/clientBinaries.json) will be checked during every startup and downloaded if out-of-date, binaries are stored in the [config folder](#config-folder)*
 
 *NOTE: use `--help` to display available options, e.g. `--loglevel debug` (or `trace`) for verbose output*
 
@@ -87,15 +87,15 @@ In the original window you can then start Mist with:
 
 Start the wallet app for development, *in a separate terminal window:*
 
-    $ cd mist/interface && meteor --no-release-check
+    $ cd Free Coin Wallet/interface && meteor --no-release-check
 
     // and in another terminal
 
     $ cd my/path/meteor-dapp-wallet/app && meteor --port 3050
 
-In the original window you can then start Mist using wallet mode:
+In the original window you can then start Free Coin Wallet using wallet mode:
 
-    $ cd mist
+    $ cd Free Coin Wallet
     $ yarn dev:electron --mode wallet
 
 
@@ -115,10 +115,10 @@ You can pass command-line options directly to Geth by prefixing them with `--nod
 the command-line invocation:
 
 ```bash
-$ yarn dev:electron --mode mist --node-rpcport 19343 --node-networkid 2
+$ yarn dev:electron --mode Free Coin Wallet --node-rpcport 19343 --node-networkid 2
 ```
 
-The `--rpc` Mist option is a special case. If you set this to an IPC socket file
+The `--rpc` Free Coin Wallet option is a special case. If you set this to an IPC socket file
 path then the `--ipcpath` option automatically gets set, i.e.:
 
 ```bash
@@ -138,7 +138,7 @@ See this guide to quickly set up a local private network on your computer:
 https://gist.github.com/evertonfraga/9d65a9f3ea399ac138b3e40641accf23
 
 
-### Using Mist with a privatenet
+### Using Free Coin Wallet with a privatenet
 
 To run a private network you will need to set the IPC path, network id and data
 folder:
@@ -147,11 +147,11 @@ folder:
 $ yarn dev:electron --rpc ~/Library/Ethereum/geth.ipc --node-networkid 1234 --node-datadir ~/Library/Ethereum/privatenet
 ```
 
-_NOTE: since `ipcpath` is also a Mist option you do not need to also include a
+_NOTE: since `ipcpath` is also a Free Coin Wallet option you do not need to also include a
 `--node-ipcpath` option._
 
 You can also launch `geth` separately with the same options prior starting
-Mist.
+Free Coin Wallet.
 
 
 ### Deployment
@@ -174,7 +174,7 @@ Furthermore cross-platform builds require additional [`electron-builder` depende
 
 #### Generate packages
 
-To generate the binaries for Mist run:
+To generate the binaries for Free Coin Wallet run:
 
     $ gulp
 
@@ -182,7 +182,7 @@ To generate the Ethereum Wallet (this will pack the one Ðapp from https://githu
 
     $ gulp --wallet
 
-The generated binaries will be under `dist_mist/release` or `dist_wallet/release`.
+The generated binaries will be under `dist_Free Coin Wallet/release` or `dist_wallet/release`.
 
 
 #### Options
@@ -211,7 +211,7 @@ Options are:
 
 - `master`
 - `develop`
-- `local` Will try to build the wallet from [mist/]../meteor-dapp-wallet/app
+- `local` Will try to build the wallet from [Free Coin Wallet/]../meteor-dapp-wallet/app
 
 *Note: applicable only when combined with `--wallet`*
 
@@ -225,7 +225,7 @@ When building a binary, you can optionally skip some tasks — generally for tes
 
 Spits out the MD5 checksums of distributables.
 
-It expects installer/zip files to be in the generated folders e.g. `dist_mist/release`
+It expects installer/zip files to be in the generated folders e.g. `dist_Free Coin Wallet/release`
 
     $ gulp checksums [--wallet]
 
@@ -234,7 +234,7 @@ It expects installer/zip files to be in the generated folders e.g. `dist_mist/re
 
 Tests are ran using [Spectron](https://github.com/electron/spectron/), a webdriver.io runner built for Electron.
 
-First make sure to build Mist with:
+First make sure to build Free Coin Wallet with:
 
     $ gulp
 
